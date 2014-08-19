@@ -16,7 +16,7 @@ def check_genesis_block(bitcoind, genesis_block_hash):
         defer.returnValue(True)
 
 nets = dict(
-    digibyteSha=math.Object(
+    digibyteScrypt=math.Object(
         P2P_PREFIX='fac3b6da'.decode('hex'), #pchmessagestart
 	P2P_PORT=12024,
 	ADDRESS_VERSION=30, #pubkey_address
@@ -37,7 +37,7 @@ nets = dict(
 	DUMB_SCRYPT_DIFF=2**16,
 	DUST_THRESHOLD=0.001e8,
     ),
-    digibyteSha_testnet=math.Object(
+    digibyteScrypt_testnet=math.Object(
         P2P_PREFIX='fcc1b7dc'.decode('hex'), #pchmessagestart
 	P2P_PORT=12025,
 	ADDRESS_VERSION=111, #pubkey_address
