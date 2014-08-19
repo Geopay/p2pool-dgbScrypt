@@ -33,8 +33,7 @@ nets = dict(
 	BLOCK_EXPLORER_URL_PREFIX='http://altexplorer.net/block/',
 	ADDRESS_EXPLORER_URL_PREFIX='http://altexplorer.net/address/',
 	TX_EXPLORER_URL_PREFIX='http://altexplorer.net/tx/',
-	SANE_TARGET_RANGE = (2**256//1000000000 - 1, 2**256//1000 - 1),
-	DUMB_SCRYPT_DIFF=2**16,
+	SANE_TARGET_RANGE=(2**256//2**32//1000 - 1, 2**256//2**32 - 1),	DUMB_SCRYPT_DIFF=2**16,
 	DUST_THRESHOLD=0.001e8,
     ),
     digibyteScrypt_testnet=math.Object(
@@ -53,7 +52,7 @@ nets = dict(
 	BLOCK_EXPLORER_URL_PREFIX='http://altexplorer.net/block/',
 	ADDRESS_EXPLORER_URL_PREFIX='http://altexplorer.net/address/',
 	TX_EXPLORER_URL_PREFIX='http://altexplorer.net/tx/',
-	SANE_TARGET_RANGE = (2**256//1000000000 - 1, 2**256//1000 - 1),
+	SANE_TARGET_RANGE=(2**256//2**32//1000 - 1, 2**256//2**32 - 1),
 	DUMB_SCRYPT_DIFF=2**16,
 	DUST_THRESHOLD=0.001e8,
     ),
