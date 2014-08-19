@@ -26,8 +26,7 @@ nets = dict(
 	     not (yield bitcoind.rpc_getinfo())['testnet']
         )),
 	SUBSIDY_FUNC=lambda height: __import__('digibyte_subsidy').GetBlockBaseValue(height),
-	BLOCKHASH_FUNC=data.hash256,
-	POW_FUNC=data.hash256,
+	POW_FUNC=lambda data: pack.IntType(256).unpack(__import__('ltc_scrypt').getPoWHash(data)),
 	BLOCK_PERIOD=30, # s
 	SYMBOL='DGB',
 	CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'digibyte') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/digibyte/') if platform.system() == 'Darwin' else os.path.expanduser('~/.digibyte'), 'digibyte.conf'),
@@ -35,7 +34,7 @@ nets = dict(
 	ADDRESS_EXPLORER_URL_PREFIX='http://altexplorer.net/address/',
 	TX_EXPLORER_URL_PREFIX='http://altexplorer.net/tx/',
 	SANE_TARGET_RANGE=(2**256//2**32//1000 - 1, 2**256//2**20 - 1),
-	DUMB_SCRYPT_DIFF=1,
+	DUMB_SCRYPT_DIFF=2**16,
 	DUST_THRESHOLD=0.001e8,
     ),
     digibyteSha_testnet=math.Object(
@@ -47,8 +46,7 @@ nets = dict(
 	    'digibyteaddress' in (yield bitcoind.rpc_help())
         )),
 	SUBSIDY_FUNC=lambda height: __import__('digibyte_subsidy').GetBlockBaseValue(height),
-	BLOCKHASH_FUNC=data.hash256,
-	POW_FUNC=data.hash256,
+	POW_FUNC=lambda data: pack.IntType(256).unpack(__import__('ltc_scrypt').getPoWHash(data)),
 	BLOCK_PERIOD=30, # s
 	SYMBOL='DGB',
 	CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'digibyte') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/digibyte/') if platform.system() == 'Darwin' else os.path.expanduser('~/.digibyte'), 'digibyte.conf'),
@@ -56,7 +54,7 @@ nets = dict(
 	ADDRESS_EXPLORER_URL_PREFIX='http://altexplorer.net/address/',
 	TX_EXPLORER_URL_PREFIX='http://altexplorer.net/tx/',
 	SANE_TARGET_RANGE=(2**256//2**32//1000 - 1, 2**256//2**20 - 1),
-	DUMB_SCRYPT_DIFF=1,
+	DUMB_SCRYPT_DIFF=2**16,
 	DUST_THRESHOLD=0.001e8,
     ),
 
