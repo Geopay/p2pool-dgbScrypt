@@ -97,7 +97,7 @@ When you install digibyted, don't forget to write in your digibyte.conf:
 Donations:
 -------------------------
 
-Donations are welcome:
+Digibyte Donations are welcome:
 
      DKqUZR8ajzo1vkXYWWx476wRyZ4La76WBy
 
