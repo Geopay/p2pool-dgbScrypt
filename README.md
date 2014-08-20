@@ -88,11 +88,11 @@ Run your miner program, connecting to 127.0.0.1 on port 5567.
 Forward port 5567 to the host running P2Pool.
 
 
-Notes for Myriadcoin:
+Notes for Digibyte:
 -------------------------
-When you install myriadcoind, don't forget to write in your myriadcoin.conf:
+When you install digibyted, don't forget to write in your digibyte.conf:
 
-    algo=sha256
+    algo=scrypt
 
 Donations:
 -------------------------
